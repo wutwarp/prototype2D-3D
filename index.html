@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THALIA</title>
+    <title>Prototype</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -19,344 +19,59 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="text-center"><img src="img/logo-removebg-preview.png" alt=""></div>
-<br>
-        <div class="nav-buttons">
-            <button class="nav-btn active" onclick="showPage('dashboard')">📊 Dashboard</button>
-            <button class="nav-btn" onclick="showPage('characters')">💃 บริการ</button>
-            <button class="nav-btn" onclick="showPage('menu')">🍜 เมนูอาหาร</button>
-            <button class="nav-btn" onclick="showPage('promotions')">🎉 โปรโมชั่น</button>
-        </div>
-
-        <!-- Dashboard Page -->
-        <div id="dashboard" class="page active">
-            <div class="card">
-                <h2>📈 Dashboard รายรับของร้าน</h2>
-                <!-- <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
-                <canvas id="myChart2" style="width:100%;max-width:500px"></canvas> -->
-
-                <div class="chart-placeholder">
-                    📊 Chart - กราฟแสดงรายรับรายวัน
-                    <canvas id="myChart2" style="width:100%;max-width:500px"></canvas>
-                </div>
-                <div class="dashboard-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">฿45,680</div>
-                        <div class="stat-label">รายรับวันนี้</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">50</div>
-                        <div class="stat-label">จำนวนรอบวันนี้</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">546</div>
-                        <div class="stat-label">จำนวนรอบสัปดาห์นี้</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">245</div>
-                        <div class="stat-label">ออเดอร์อาหารวันนี้</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1,847</div>
-                        <div class="stat-label">ออเดอร์อาหารสัปดาห์นี้</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">฿312,450</div>
-                        <div class="stat-label">รายรับสัปดาห์นี้</div>
-                    </div>  
-                    
-                </div>
-                
-            </div>
-        </div>
-
-        <!-- Characters Page -->
-        <div id="characters" class="page">
-            <div class="card">
-                <h2>💃 คนที่พร้อมบริการ</h2>
-                <div class="character-grid">
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/1.jpg" alt="" width="100%"></div>
-                        <h3>น้องพลอย</h3>
-                        <p>No.42</p>
-                        <span class="character-status available">พร้อมทำงาน</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/2.jpg" alt="" width="100%"></div>
-                        <h3>น้องชมพู</h3>
-                        <p>No.17</p>
-                        <span class="character-status available">พร้อมทำงาน</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/3.png" alt="" width="100%"></div>
-                        <h3>น้องซากุระ</h3>
-                        <p>No.23</p>
-                        <span class="character-status busy">กำลังทำงาน</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/4.jpg" alt="" width="100%"></div>
-                        <h3>น้องโทนี่</h3>
-                        <p>No.12</p>
-                        <span class="character-status available">พร้อมทำงาน</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/5.webp" alt="" width="100%"></div>
-                        <h3>น้องลิซ่า</h3>
-                        <p>No.24</p>
-                        <span class="character-status busy">กำลังทำงาน</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/6.jpg" alt="" width="100%"></div>
-                        <h3>น้องขิง</h3>
-                        <p>No.27</p>
-                        <span class="character-status available">พร้อมทำงาน</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h2>💃 คนที่ยังไม่มา</h2>
-                <div class="character-grid">
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/1.jpg" alt="" width="100%"></div>
-                        <h3>น้องพลอยชมพู</h3>
-                        <p>No.41</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/2.jpg" alt="" width="100%"></div>
-                        <h3>น้องชมพูนุช</h3>
-                        <p>No.33</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/3.png" alt="" width="100%"></div>
-                        <h3>น้องซาชิ</h3>
-                        <p>No.25</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/4.jpg" alt="" width="100%"></div>
-                        <h3>น้องข้าวฟ่าง</h3>
-                        <p>No.15</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/5.webp" alt="" width="100%"></div>
-                        <h3>น้องลิตา</h3>
-                        <p>No.29</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/6.jpg" alt="" width="100%"></div>
-                        <h3>น้องน้ำ</h3>
-                        <p>No.28</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-avatar"><img src="img/imgChild/7.jpg" alt="" width="100%"></div>
-                        <h3>น้องแอปเปิ้ล</h3>
-                        <p>No.29</p>
-                        <span class="character-status busy">ยังไม่มา</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Menu Page -->
-        <div id="menu" class="page">
-            <div class="card">
-                <h2>🍜 เมนูอาหาร</h2>
-                 <div style="text-align: right; margin-bottom: 10px;">
-            <button class="btn btn-primary" id="viewOrderBtn">
-                📋 รายการสั่งอาหาร <span class="order-count badge bg-light text-dark">3</span>
-            </button>
-        </div>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-image"><img src="img/imgFood/padthai.jpg" alt="" width="120%"></div>
-                        <div class="menu-content">
-                            <h3 class="menu-title">ผัดไทยกุ้งสด</h3>
-                            <p class="menu-description">ผัดไทยใส่กุ้งสดขนาดใหญ่ เส้นเหนียวนุ่ม รสชาติเข้มข้น</p>
-                            <span class="menu-price">฿180</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image"><img src="img/imgFood/tomyum.jpg" alt="" width="120%"></div>
-                        <div class="menu-content">
-                            <h3 class="menu-title">ต้มยำกุ้งน้ำข้น</h3>
-                            <p class="menu-description">ต้มยำรสเข้มข้น กุ้งสดใหญ่ เห็ดฟาง ใบมะกรูด</p>
-                            <span class="menu-price">฿220</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image"><img src="img/imgFood/steak.jpg" alt="" width="120%"></div>
-                        <div class="menu-content">
-                            <h3 class="menu-title">สเต็กเนื้อย่าง</h3>
-                            <p class="menu-description">เนื้อวัวนำเข้าคุณภาพเยี่ยม ย่างสุกกำลังดี</p>
-                            <span class="menu-price">฿450</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image"><img src="img/imgFood/shushi.webp" alt="" width="120%"></div>
-                        <div class="menu-content">
-                            <h3 class="menu-title">ซูชิรวมมิตร</h3>
-                            <p class="menu-description">ซูชิคละแสน ปลาสดทุกชิ้น วัตถุดิบนำเข้าจากญี่ปุ่น</p>
-                            <span class="menu-price">฿380</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image"><img src="img/imgFood/pizza.jpg" alt="" width="130%"></div>
-                        <div class="menu-content">
-                            <h3 class="menu-title">พิซซ่าชีสเยอะ</h3>
-                            <p class="menu-description">พิซซ่าแป้งบาง ชีสมอสซาเรลล่า 4 ชนิด</p>
-                            <span class="menu-price">฿320</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image"><img src="img/imgFood/cake.jpg" alt="" width="120%"></div>
-                        <div class="menu-content">
-                            <h3 class="menu-title">เค้กช็อกโกแลต</h3>
-                            <p class="menu-description">เค้กช็อกโกแลตเข้ม หน้านุ่ม ใส่วิปครีม</p>
-                            <span class="menu-price">฿150</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal สำหรับโชว์รายการสั่งอาหาร -->
-        <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="orderModalLabel">📋 รายการอาหารที่สั่ง</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ปิด"></button>
-            </div>
-            <div class="modal-body">
-                <ul id="orderList">
-                <li>ผัดไทยกุ้งสด x 2</li>
-                <li>ต้มยำกุ้งน้ำข้น x 1</li>
-                <li>พิซซ่าชีสเยอะ x 3</li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-            </div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Promotions Page -->
-        <div id="promotions" class="page">
-            <div class="card">
-                <h2>🎉 โปรโมชั่นพิเศษ</h2>
-                <div style="text-align: right; margin-bottom: 10px;">
-            <button class="btn btn-success" id="viewReceiptBtn">
-                🧾 ดูใบเสร็จ
-            </button>
-        </div>
-                <div class="promotion-card">
-                    <div class="promotion-discount">-50%</div>
-                    <h3 class="promotion-title">🍜 Happy Hour</h3>
-                    <p class="promotion-description">
-                        ลด 50% สำหรับเมนูอาหารทุกเมนู ทุกวันจันทร์-ศุกร์ เวลา 14:00-17:00 น. 
-                        รับประทานที่ร้านเท่านั้น ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้
-                    </p>
-                </div>
-
-                <div class="promotion-card">
-                    <div class="promotion-discount">ซื้อ 2 ฟรี 1</div>
-                    <h3 class="promotion-title">🍰 Sweet Deal</h3>
-                    <p class="promotion-description">
-                        มาก่อน 21:00 เหล้ารีเจนซี่ 2 ขวด 999.-  แถมฟรี 1 ขวด
-                        โปรโมชั่นนี้ใช้ได้ทุกวัน
-                    </p>
-                </div>
-
-                <div class="promotion-card">
-                    <div class="promotion-discount">-30%</div>
-                    <h3 class="promotion-title">🥘 Family Set</h3>
-                    <p class="promotion-description">
-                        สั่งอาหารครบ 4 เมนู รับส่วนลดทันที 30% สำหรับโต๊ะที่มีลูกค้า 4 คนขึ้นไป 
-                        ใช้ได้ทุกวัน ตั้งแต่ 18:00 น. เป็นต้นไป
-                    </p>
-                </div>
-
-                <div class="promotion-card">
-                    <div class="promotion-discount">ฟรี!</div>
-                    <h3 class="promotion-title">🥤 Free Drink</h3>
-                    <p class="promotion-description">
-                        สั่งอาหารครบ 500 บาท แถมเครื่องดื่มฟรี 1 แก้ว
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal ใบเสร็จ -->
-        <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="width: 300px; margin: auto; font-family: monospace;">
-      <div class="modal-body">
-        <div style="text-align: center;">
-          <img src="img/logo-removebg-preview.png" alt="Logo" style="width: 100px; height: auto;">
-        <h5 style="text-align: center;">THALIA</h5>
-        <p style="text-align: center;">ใบเสร็จรับเงิน</p>
-        <p>เลขที่: IV-000186</p>
-        <p>วันที่: 2025-06-19 เวลา: 13:45</p>
-        <p>พนักงาน: Admin</p>
-        <hr>
-        <table style="width: 100%; font-size: 14px;">
-          <thead>
-            <tr>
-              <th style="text-align: left;">รายการ</th>
-              <th style="text-align: right;">จำนวน</th>
-              <th style="text-align: right;">ราคา</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ผัดไทยกุ้งสด</td>
-              <td style="text-align: right;">2</td>
-              <td style="text-align: right;">360</td>
-            </tr>
-            <tr>
-              <td>พิซซ่าชีสเยอะ</td>
-              <td style="text-align: right;">1</td>
-              <td style="text-align: right;">320</td>
-            </tr>
-            <tr>
-              <td>บริการน้องพลอย</td>
-              <td style="text-align: right;">2ชม.</td>
-              <td style="text-align: right;">600</td>
-            </tr>
-            <tr>
-              <td>บริการน้องซากุระ</td>
-              <td style="text-align: right;">1ชม.</td>
-              <td style="text-align: right;">300</td>
-            </tr>
-          </tbody>
-        </table>
-        <hr>
-        <table style="width: 100%; font-size: 14px;">
-          <tr>
-            <td>รวม</td>
-            <td style="text-align: right;">1580.00</td>
-          </tr>
-          <tr>
-            <td>ส่วนลด</td>
-            <td style="text-align: right;">-500.00</td>
-          </tr>
-          <tr style="font-weight: bold;">
-            <td>ยอดสุทธิ</td>
-            <td style="text-align: right;">1080.00</td>
-          </tr>
-        </table>
-        <hr>
-        <p style="text-align: center;">ขอบคุณที่ใช้บริการ</p>
-      </div>
+     <div class="header">
+        <h1>🏠 เครื่องมือออกแบบแปลนบ้าน</h1>
+        <p>ลากวางห้องต่าง ๆ เพื่อออกแบบบ้านของคุณ</p>
     </div>
-  </div>
-</div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>📐 ห้องและพื้นที่</h3>
+            <div class="room-templates">
+                <div class="room-item" draggable="true" data-room="bedroom">
+                    🛏️<br>ห้องนอน
+                </div>
+                <div class="room-item" draggable="true" data-room="bathroom">
+                    🚿<br>ห้องน้ำ
+                </div>
+                <div class="room-item" draggable="true" data-room="kitchen">
+                    🍳<br>ห้องครัว
+                </div>
+                <div class="room-item" draggable="true" data-room="living">
+                    🛋️<br>ห้องรับแขก
+                </div>
+                <div class="room-item" draggable="true" data-room="dining">
+                    🍽️<br>ห้องอาหาร
+                </div>
+                <div class="room-item" draggable="true" data-room="office">
+                    💻<br>ห้องทำงาน
+                </div>
+                <div class="room-item" draggable="true" data-room="storage">
+                    📦<br>ห้องเก็บของ
+                </div>
+                <div class="room-item" draggable="true" data-room="balcony">
+                    🌿<br>ระเบียง
+                </div>
+            </div>
+
+            <h3>🛠️ เครื่องมือ</h3>
+            <div class="controls">
+                <button class="control-btn" onclick="clearAll()">🗑️ ลบทั้งหมด</button>
+                <button class="control-btn" onclick="saveDesign()">💾 บันทึกแบบ</button>
+                <button class="control-btn" onclick="exportDesign()">📄 ส่งออก PDF</button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="floorPlan"></canvas>
+            <div class="grid-lines"></div>
+            <div class="info-panel">
+                <h4>📊 ข้อมูลการออกแบบ</h4>
+                <p>ห้องทั้งหมด: <span id="roomCount">0</span> ห้อง</p>
+                <p>พื้นที่ประมาณ: <span id="totalArea">0</span> ตร.ม.</p>
+                <p>คลิกห้องเพื่อเลือก หรือ Delete เพื่อลบ</p>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
