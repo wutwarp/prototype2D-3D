@@ -14,62 +14,125 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
 
     
 </head>
 
 <body>
-     <div class="header">
-        <h1>🏠 เครื่องมือออกแบบแปลนบ้าน</h1>
-        <p>ลากวางห้องต่าง ๆ เพื่อออกแบบบ้านของคุณ</p>
-    </div>
+    <!-- <div class="header">
+        <h1>🚪 ระบบออกแบบประตูและวงกบ 3D</h1>
+        <p>ออกแบบประตูแบบ 3 มิติ พร้อมปรับแต่งขนาด สี และวัสดุ</p>
+    </div> -->
 
     <div class="container">
         <div class="sidebar">
-            <h3>📐 ห้องและพื้นที่</h3>
-            <div class="room-templates">
-                <div class="room-item" draggable="true" data-room="bedroom">
-                    🛏️<br>ห้องนอน
-                </div>
-                <div class="room-item" draggable="true" data-room="bathroom">
-                    🚿<br>ห้องน้ำ
-                </div>
-                <div class="room-item" draggable="true" data-room="kitchen">
-                    🍳<br>ห้องครัว
-                </div>
-                <div class="room-item" draggable="true" data-room="living">
-                    🛋️<br>ห้องรับแขก
-                </div>
-                <div class="room-item" draggable="true" data-room="dining">
-                    🍽️<br>ห้องอาหาร
-                </div>
-                <div class="room-item" draggable="true" data-room="office">
-                    💻<br>ห้องทำงาน
-                </div>
-                <div class="room-item" draggable="true" data-room="storage">
-                    📦<br>ห้องเก็บของ
-                </div>
-                <div class="room-item" draggable="true" data-room="balcony">
-                    🌿<br>ระเบียง
+            <!-- แบบประตูสำเร็จรูป -->
+            <div class="panel">
+                <h3>🏠 แบบประตูสำเร็จรูป</h3>
+                <div class="door-templates">
+                    <button class="door-template active" data-type="single">
+                        🚪<br>ประตูเดี่ยว
+                    </button>
+                    <button class="door-template" data-type="double">
+                        🚪🚪<br>ประตูคู่
+                    </button>
+                    <button class="door-template" data-type="sliding">
+                        ↔️<br>ประตูเลื่อน
+                    </button>
+                    <button class="door-template" data-type="folding">
+                        🪗<br>ประตูพับ
+                    </button>
                 </div>
             </div>
 
-            <h3>🛠️ เครื่องมือ</h3>
-            <div class="controls">
-                <button class="control-btn" onclick="clearAll()">🗑️ ลบทั้งหมด</button>
-                <button class="control-btn" onclick="saveDesign()">💾 บันทึกแบบ</button>
-                <button class="control-btn" onclick="exportDesign()">📄 ส่งออก PDF</button>
+            <!-- ขนาดประตู -->
+            <div class="panel">
+                <h3>📏 ขนาดประตู</h3>
+                <div class="control-group">
+                    <label>ความกว้าง (ซม.)</label>
+                    <div class="slider-container">
+                        <input type="range" class="slider" id="doorWidth" min="60" max="120" value="80">
+                        <div class="slider-value" id="widthValue">80 ซม.</div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label>ความสูง (ซม.)</label>
+                    <div class="slider-container">
+                        <input type="range" class="slider" id="doorHeight" min="180" max="240" value="200">
+                        <div class="slider-value" id="heightValue">200 ซม.</div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label>ความหนา (ซม.)</label>
+                    <div class="slider-container">
+                        <input type="range" class="slider" id="doorThickness" min="3" max="8" value="4">
+                        <div class="slider-value" id="thicknessValue">4 ซม.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สีประตู -->
+            <div class="panel">
+                <h3>🎨 สีประตู</h3>
+                <div class="color-picker">
+                    <div class="color-option active" data-color="#8B4513" style="background: #8B4513;" title="น้ำตาลไม้"></div>
+                    <div class="color-option" data-color="#FFFFFF" style="background: #FFFFFF;" title="ขาว"></div>
+                    <div class="color-option" data-color="#2F4F4F" style="background: #2F4F4F;" title="เทาเข้ม"></div>
+                    <div class="color-option" data-color="#000000" style="background: #000000;" title="ดำ"></div>
+                    <div class="color-option" data-color="#CD853F" style="background: #CD853F;" title="น้ำตาลทอง"></div>
+                    <div class="color-option" data-color="#A0522D" style="background: #A0522D;" title="น้ำตาลแดง"></div>
+                    <div class="color-option" data-color="#708090" style="background: #708090;" title="เทาอ่อน"></div>
+                    <div class="color-option" data-color="#8FBC8F" style="background: #8FBC8F;" title="เขียวอ่อน"></div>
+                </div>
+            </div>
+
+            <!-- วัสดุ -->
+            <div class="panel">
+                <h3>🪵 วัสดุประตู</h3>
+                <div class="control-group">
+                    <select class="material-select" id="doorMaterial">
+                        <option value="wood">ไม้สัก</option>
+                        <option value="teak">ไม้ติก</option>
+                        <option value="pine">ไม้สน</option>
+                        <option value="metal">เหล็ก</option>
+                        <option value="glass">กระจก</option>
+                        <option value="pvc">PVC</option>
+                        <option value="composite">วัสดุผสม</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ส่งออก -->
+            <div class="panel export-panel">
+                <h3>💾 ส่งออกและบันทึก</h3>
+                <button class="export-btn" id="exportImage">📸 ส่งออกภาพ</button>
+                <button class="export-btn" id="exportSpecs">📋 ส่งออกสเปค</button>
+                <button class="export-btn" id="sendToArchitect">📧 ส่งให้สถาปนิก</button>
             </div>
         </div>
 
-        <div class="canvas-container">
-            <canvas id="floorPlan"></canvas>
-            <div class="grid-lines"></div>
+        <div class="viewer">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>กำลังโหลดระบบ 3D...</p>
+            </div>
+            <canvas id="door3D"></canvas>
+            
+            <div class="viewer-controls">
+                <button class="viewer-btn" id="resetView">🔄 รีเซ็ตมุมมอง</button>
+                <button class="viewer-btn" id="toggleWireframe">🔲 โครงลวด</button>
+                <button class="viewer-btn" id="toggleAnimation">▶️ เปิด/ปิดประตู</button>
+            </div>
+
             <div class="info-panel">
-                <h4>📊 ข้อมูลการออกแบบ</h4>
-                <p>ห้องทั้งหมด: <span id="roomCount">0</span> ห้อง</p>
-                <p>พื้นที่ประมาณ: <span id="totalArea">0</span> ตร.ม.</p>
-                <p>คลิกห้องเพื่อเลือก หรือ Delete เพื่อลบ</p>
+                <h4>📊 ข้อมูลประตู</h4>
+                <p>ประเภท: <span id="doorTypeInfo">ประตูเดี่ยว</span></p>
+                <p>ขนาด: <span id="doorSizeInfo">80×200×4 ซม.</span></p>
+                <p>วัสดุ: <span id="doorMaterialInfo">ไม้สัก</span></p>
+                <p>ราคาประมาณ: <span id="doorPriceInfo">฿8,000 - 15,000</span></p>
             </div>
         </div>
     </div>
