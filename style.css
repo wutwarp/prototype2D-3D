@@ -9,6 +9,9 @@
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             height: 100vh;
             overflow: hidden;
+            /* -- Added for full-screen layout -- */
+            display: flex;
+            flex-direction: column;
         }
 
         .header {
@@ -28,7 +31,9 @@
 
         .container {
             display: flex;
-            height: calc(100vh - 80px);
+            /* -- Modified for full-screen layout -- */
+            flex: 1;
+            min-height: 0; /* Prevents flexbox overflow */
         }
 
         .sidebar {
